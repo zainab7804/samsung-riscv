@@ -15,5 +15,3 @@ The program is centered around the RISC-V architecture and is designed to provid
 <summary><b>TASK 1:</b> The task focuses on exploring C and RISC-V labs to compile C programs using both the GCC and RISC-V compilers.</summary>
 C Lab
 We start by creating a file in the chosen directory using a simple editor like Leafpad. After writing the program to calculate the sum of numbers from 1 to n, save the file, close the editor, and compile it using GCC.
-![]
-</details>
