@@ -62,6 +62,8 @@ Next, compile it using the RISC-V GCC compiler.
 riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 ```
+![Code compiled using riscv compiler](https://github.com/user-attachments/assets/18cbdbe6-e335-4377-a2c7-f58c8d03c138)
+
 After compiling, use
 
 ```
@@ -69,8 +71,6 @@ riscv64-unknown-elf-objdump -d sum1ton.o
 
 ```
 to disassemble the code and examine its assembly language version. This provides a closer look at how the program works at the hardware level.
-
-![Code compiled using riscv compiler](https://github.com/user-attachments/assets/18cbdbe6-e335-4377-a2c7-f58c8d03c138)
 
 The Assembly language code is displayed.
 
