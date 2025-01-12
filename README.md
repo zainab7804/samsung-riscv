@@ -1,4 +1,4 @@
-# Samsung-riscv
+![Objdump using O1](https://github.com/user-attachments/assets/54327850-ebb8-4c52-b871-2a95f9efd898)# Samsung-riscv
 The program is centered around the RISC-V architecture and is designed to provide in-depth knowledge and practical experience in VLSI chip design using open-source tools. It help learners to bridge the gap between academic concepts and industry practices. The internship is guided by Mr. Kunal Ghosh.
 
 ## Basic Details
@@ -105,11 +105,20 @@ RISC-V lab
   
 Performing SPIKE Simulation and Debugging the C code with Interactive Debugging Mode using Spike. </summary>
 
-We start by creating a file in the chosen directory using a simple editor like Leafpad. After writing the program to calculate the sum of numbers from 1 to n, save the file, close the editor.
+We start by creating a file in the chosen directory using a simple editor like Leafpad. After writing the program to swap two numbers, save the file, close the editor.
 
 C Code to swap two numbers
 ```
-
+#include<stdio.h>
+void main()
+{
+int a=10, b=5, temp;
+printf("Numbers before swap: A=%d and B=%d\n",a,b);
+temp=a;
+a=b;
+b=temp;
+printf("Numbers after swap: A=%d and B=%d\n",a,b);
+}
 ```
 
 The code has to be simulated using both gcc and riscv compiler. Same output should be displayed on the terminal for both.
@@ -127,3 +136,54 @@ spike pk swap.o
 ```
 ![gcc and spike output](https://github.com/user-attachments/assets/47a39f63-5665-4642-b43f-adb50fc64e2c)
 
+Object dump for C code using Ofast and O1
+
+![Objdump using Ofast](https://github.com/user-attachments/assets/33446aa1-b054-46e3-b856-e6776a2f541d)
+Using Ofast
+
+![Objdump using O1](https://github.com/user-attachments/assets/db290a9e-e2f5-4c91-ad16-30f2da31da3a)
+Using O1
+
+To debug the assembly language program use the following commands
+
+1. To open the object dump
+   ```
+   riscv64-unknown-elf-objdump -d swap.o | less
+   ```
+2. To debug
+   ```
+   spike -d pk swap.o
+
+   ```
+The debugging operations are performed as follows
+![Debugging](https://github.com/user-attachments/assets/f150cd24-dd67-4e04-9744-b5354575f72f)
+
+Description of the commands used while execution:
+1. spike: This is the RISC-V ISA simulator (an instruction set simulator). Spike is commonly used for simulating and testing RISC-V programs. It emulates a RISC-V processor, running programs in a controlled environment.
+2. -d: This flag is for debugging mode. It tells Spike to run in debug mode, allowing step-by-step execution, inspecting registers, memory, etc. Useful for identifying issues and analyzing program behavior.
+3.  pk: This refers to the proxy kernel, which acts as a lightweight operating system for RISC-V. The proxy kernel handles system calls and facilitates program execution in the simulated environment.
+
+Description of few assembly level instructions:
+1. addi (Add Immediate)
+   
+   Format: addi rd, rs1, imm
+   
+   Adds an immediate value (imm) to the value in register rs1 and stores the result in register rd.
+   
+2.  sd (Store Doubleword)
+   
+    Format: sd rs2, offset(rs1)
+   
+    Stores a 64-bit value from register rs2 into memory at an address calculated by offset + rs1.
+   
+3. lui (Load Upper Immediate)
+
+   Format: lui rd, imm
+   
+   The value in imm is shifted left by 12 bits and stored in the upper portion of the destination register.
+   
+4. li (Load Immediate)
+
+   Format: li rd, imm
+   
+   Loads an immediate value (imm) into a register (rd).
