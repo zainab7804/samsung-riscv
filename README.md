@@ -99,3 +99,31 @@ RISC-V lab
 4. -Ofast: An aggressive optimization level in GCC that prioritizes performance over strict standards compliance. It enables high-speed optimizations, but some may deviate from strict IEEE or ISO standards.
 5. -O1: Enables basic optimizations in GCC that improve performance without significantly increasing compilation time.
 </details>
+
+<details>
+<summary><b>TASK 2:</b> 
+  
+Performing SPIKE Simulation and Debugging the C code with Interactive Debugging Mode using Spike. </summary>
+
+We start by creating a file in the chosen directory using a simple editor like Leafpad. After writing the program to calculate the sum of numbers from 1 to n, save the file, close the editor.
+
+C Code to swap two numbers
+```
+
+```
+
+The code has to be simulated using both gcc and riscv compiler. Same output should be displayed on the terminal for both.
+
+The commands used are as follows:
+
+For gcc compiler
+```
+gcc swap.c
+./a.out
+```
+For riscv compiler
+```
+spike pk swap.o
+```
+![gcc and spike output](https://github.com/user-attachments/assets/47a39f63-5665-4642-b43f-adb50fc64e2c)
+
