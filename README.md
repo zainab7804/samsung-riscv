@@ -22,9 +22,52 @@ C Lab
 
 We start by creating a file in the chosen directory using a simple editor like Leafpad. After writing the program to calculate the sum of numbers from 1 to n, save the file, close the editor, and compile it using GCC. Once compiled, you can run the program to see the output.
 
+C Code to calculate 1 to n numbers
+
+
+The commands used are
+```
+gcc sum1ton.c
+./a.out
+
+```
+
+![Code compiled using gcc compiler](https://github.com/user-attachments/assets/f02b5054-2576-4505-8c07-e6c7d2bf00cf)
+
+
+
 RISC-V lab
 
-It involves viewing the code with the cat command to ensure it’s correct. Next, compile it using the RISC-V GCC compiler.After compiling, use riscv64-unknown-elf-objdump to disassemble the code and examine its assembly language version. This provides a closer look at how the program works at the hardware level.
+It involves viewing the code with the cat command to ensure it’s correct.
+
+```
+cat sum1ton.c
+
+```
+Next, compile it using the RISC-V GCC compiler.
+
+```
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+```
+After compiling, use
+
+```
+riscv64-unknown-elf-objdump -d sum1ton.o
+
+```
+to disassemble the code and examine its assembly language version. This provides a closer look at how the program works at the hardware level.
+
+![Code compiled using riscv compiler](https://github.com/user-attachments/assets/18cbdbe6-e335-4377-a2c7-f58c8d03c138)
+
+The Assembly language code is displayed.
+
+![objdump using O1](https://github.com/user-attachments/assets/80bb92da-641c-46d2-9783-0631849a783b)
+Using O1
+
+![Objdump using Ofast](https://github.com/user-attachments/assets/6c79d2a9-a40d-4fc9-8af6-954d91309a73)
+Using Ofast
+
 Optimization levels in GCC improve code performance and size to varying degrees. -O0 applies no optimization, suitable for debugging. -O1 offers basic optimizations, making code faster and smaller without significantly increasing compilation time, striking a balance between performance and simplicity. -Ofast prioritizes speed over strict compliance with standards, ideal for performance-critical tasks but requires thorough testing to avoid unexpected issues. Testing is crucial, as higher optimizations may complicate debugging or affect precision in critical calculations.
 
 Description of the commands used while execution:
