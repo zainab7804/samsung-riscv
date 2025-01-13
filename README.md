@@ -1,4 +1,4 @@
-![Objdump using O1](https://github.com/user-attachments/assets/54327850-ebb8-4c52-b871-2a95f9efd898)# Samsung-riscv
+# Samsung-riscv
 The program is centered around the RISC-V architecture and is designed to provide in-depth knowledge and practical experience in VLSI chip design using open-source tools. It help learners to bridge the gap between academic concepts and industry practices. The internship is guided by Mr. Kunal Ghosh.
 
 ## Basic Details
