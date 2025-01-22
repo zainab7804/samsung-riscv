@@ -18,11 +18,11 @@ The program is centered around the RISC-V architecture and is designed to provid
   
 The task focuses on exploring C and RISC-V labs to compile C programs using both the GCC and RISC-V compilers.</summary>
 
-C Lab
+# C Lab
 
 We start by creating a file in the chosen directory using a simple editor like Leafpad. After writing the program to calculate the sum of numbers from 1 to n, save the file, close the editor, and compile it using GCC. Once compiled, you can run the program to see the output.
 
-C Code to calculate 1 to n numbers
+# C Code to calculate 1 to n numbers
 ```
 #include<stdio.h>
 int main()
@@ -48,7 +48,7 @@ gcc sum1ton.c
 
 
 
-RISC-V lab
+# RISC-V lab
 
 It involves viewing the code with the cat command to ensure it’s correct.
 
@@ -82,16 +82,16 @@ Using Ofast
 
 Optimization levels in GCC improve code performance and size to varying degrees. -O0 applies no optimization, suitable for debugging. -O1 offers basic optimizations, making code faster and smaller without significantly increasing compilation time, striking a balance between performance and simplicity. -Ofast prioritizes speed over strict compliance with standards, ideal for performance-critical tasks but requires thorough testing to avoid unexpected issues. Testing is crucial, as higher optimizations may complicate debugging or affect precision in critical calculations.
 
-Description of the commands used while execution:
+# Description of the commands used while execution:
 
-C lab
+**C lab**
 
 1. cd: Changes the current working directory in a command-line interface.
 2. leafpad: A simple and lightweight graphical text editor for Linux systems.
 3. gcc: Performs the compilation step to build a program.
 4. ./a.out: It will execute the file that was created with the compile.
 
-RISC-V lab
+**RISC-V lab**
 
 1. -mabi=lp64: Specifies the ABI (Application Binary Interface) for RISC-V, indicating the use of the LP64 model, which uses 64-bit long integers and pointers.
 2. -march=rv64i: Specifies the target architecture for RISC-V. rv64i indicates a 64-bit RISC-V processor using the base integer instruction set (I).
@@ -107,7 +107,7 @@ Performing SPIKE Simulation and Debugging the C code with Interactive Debugging 
 
 We start by creating a file in the chosen directory using a simple editor like Leafpad. After writing the program to swap two numbers, save the file, close the editor.
 
-C Code to swap two numbers
+# C Code to swap two numbers
 ```
 #include<stdio.h>
 void main()
@@ -158,32 +158,84 @@ To debug the assembly language program use the following commands
 The debugging operations are performed as follows
 ![Debugging](https://github.com/user-attachments/assets/f150cd24-dd67-4e04-9744-b5354575f72f)
 
-Description of the commands used while execution:
-1. spike: This is the RISC-V ISA simulator (an instruction set simulator). Spike is commonly used for simulating and testing RISC-V programs. It emulates a RISC-V processor, running programs in a controlled environment.
-2. -d: This flag is for debugging mode. It tells Spike to run in debug mode, allowing step-by-step execution, inspecting registers, memory, etc. Useful for identifying issues and analyzing program behavior.
-3.  pk: This refers to the proxy kernel, which acts as a lightweight operating system for RISC-V. The proxy kernel handles system calls and facilitates program execution in the simulated environment.
+# Description of the commands used while execution:
+1. **spike:** This is the RISC-V ISA simulator (an instruction set simulator). Spike is commonly used for simulating and testing RISC-V programs. It emulates a RISC-V processor, running programs in a controlled environment.
+2. **-d:** This flag is for debugging mode. It tells Spike to run in debug mode, allowing step-by-step execution, inspecting registers, memory, etc. Useful for identifying issues and analyzing program behavior.
+3.  **pk:** This refers to the proxy kernel, which acts as a lightweight operating system for RISC-V. The proxy kernel handles system calls and facilitates program execution in the simulated environment.
 
-Description of few assembly level instructions:
-1. addi (Add Immediate)
+# Description of few assembly level instructions:
+1. **addi (Add Immediate)**
    
    Format: addi rd, rs1, imm
    
    Adds an immediate value (imm) to the value in register rs1 and stores the result in register rd.
    
-2.  sd (Store Doubleword)
+2.  **sd (Store Doubleword)**
    
     Format: sd rs2, offset(rs1)
    
     Stores a 64-bit value from register rs2 into memory at an address calculated by offset + rs1.
    
-3. lui (Load Upper Immediate)
+3. **lui (Load Upper Immediate)**
 
    Format: lui rd, imm
    
    The value in imm is shifted left by 12 bits and stored in the upper portion of the destination register.
    
-4. li (Load Immediate)
+4. **li (Load Immediate)**
 
    Format: li rd, imm
    
    Loads an immediate value (imm) into a register (rd).
+
+----------------------------------------------------------------------------------------------------------------------------
+
+<details>
+<summary><b>TASK 3:</b> 
+  
+The goal is to analyze and categorize each of the provided instructions based on their type, whether it be R-type, I-type, or J-type, and then translate them into their respective 32-bit machine instruction codes.</summary>
+
+
+# What is RISC-V?
+
+RISC-V is an open-source instruction set architecture (ISA) that enables developers to design processors for specific applications without the need for licensing fees. It is based on reduced instruction set computer (RISC) principles and represents the fifth generation of processors built on this concept. As an open and free alternative processor technology, RISC-V offers flexibility and accessibility to developers.
+
+# Instruction Formats in RISC-V
+
+The instruction format of a processor defines how machine language instructions are structured for execution. In RISC-V, the instructions are composed of fields that specify the data's location and operations. There are six main instruction formats in RISC-V:
+
+
+1. R-format
+2. I-format
+3. S-format
+4. B-format
+5. U-format
+6. J-format
+
+Each format serves specific purposes in the processor's operation.
+
+![Screenshot 2025-01-22 161646](https://github.com/user-attachments/assets/29ce1369-8c8b-4613-8747-4b28c26ccb8e)
+
+# 1. R-type Instruction:
+It is designed for operations that are performed on registers rather than memory locations. It is primarily used for executing arithmetic and logical operations.
+
+The 32-bit instruction is divided into six fields:
+1. **Opcode (7 bits):** Specifies the type of instruction format and operation to be performed.
+2. **rd (5 bits):** Represents the Destination Register where the result of the operation is stored.
+3. **func3 (3 bits):** Determines the specific arithmetic or logical operation to be performed.
+4. **rs1 (5 bits):** First Source Register that holds input data for the operation.
+5. **rs2 (5 bits):** Second Source Register used alongside rs1 for computation.
+6. **func7 (7 bits):** Works similarly to func3 by providing additional operation details.
+
+These fields together enable the execution of arithmetic and logical instructions using registers in RISC-V.
+
+Example: add x1, x2, x3
+
+
+
+
+'''
+  0000000   00011   00010   000   00001   0110011
+'''
+
+  
