@@ -366,6 +366,63 @@ Example: jal x1, 2048
   
 To perform a functional simulation of the given RISC-V Core Verilog netlist and testbench.</summary>
 
-We will use the Verilog Code and Testbench of RISCV that has already been designed. 
+Note: We will use the Verilog Code and Testbench of RISCV that has already been designed.
 
+### Step 1: Installation of iverilog and gtkwave
 
+Use the following commands for installation:
+1. For iverilog installation:
+ ```
+  $ sudo apt install iverilog
+ ```
+2. For gtkwave installation:
+ ```
+  $ sudo apt install gtkwave
+ ```
+### Step 2: Create two files for verilog and testbench using the following commands
+```
+  $ gedit iiitb_rv32i.v
+  $ gedit iiitb_rv32i_tb.v
+```
+### Step 3: To simulate and run the verilog code , enter the following commands in your terminal
+```
+  $ iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
+  $ ./iiitb_rv32i
+```
+### Step 4: To see the simulation waveform in GTKWave, enter the following command:
+	```
+	$ gtkwave iiitb_rv32i.vcd
+	```
+ The gtkwave will be opened and the following window will appear.
+ 
+ ![window](https://github.com/user-attachments/assets/03ae390f-cfe6-4812-8a62-7c1fdbc8b502)
+
+### Step 5: Analysing the output waveform
+**1. add r6,r1,r2**
+ ![1](https://github.com/user-attachments/assets/00308126-3291-4427-b5d9-13e79de65fbc)
+
+**2. sub r7,r1,r2**
+![2](https://github.com/user-attachments/assets/3e4ee4d4-3d47-4595-ba87-0d9991f6641b)
+
+**3. and r8,r1,r3**
+![3](https://github.com/user-attachments/assets/ffae9471-fb14-487a-9552-de02d69dc951)
+
+**4. or r9,r2,r5**
+![4](https://github.com/user-attachments/assets/08fa8780-754e-4109-a70a-97a4b619370d)
+
+**5. xor r10,r1,r4**
+![5](https://github.com/user-attachments/assets/2b92a9dc-8d52-4f8b-a618-72ff0454355f)
+ 
+**6. slt r11,r2,r4**
+![6](https://github.com/user-attachments/assets/3749a038-8571-4353-8447-ba10ce15220b)
+
+**7. addi r12,r4,5**
+![7](https://github.com/user-attachments/assets/0b8e7fe4-f923-4fd5-8e65-8146dcd1ce41)
+
+**8.  lw r13,r1,2**
+![8](https://github.com/user-attachments/assets/c5e6ac2b-6912-4307-b33b-21d8a1ba2fec)
+    
+**9.  beq r0,r0,15**
+![9](https://github.com/user-attachments/assets/36d38d5a-4c5c-4f9a-a233-1a79e395f8ea)
+
+</details>
