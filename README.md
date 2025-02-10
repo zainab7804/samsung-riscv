@@ -390,9 +390,9 @@ Use the following commands for installation:
   $ ./iiitb_rv32i
 ```
 ### Step 4: To see the simulation waveform in GTKWave, enter the following command:
-	```
-	$ gtkwave iiitb_rv32i.vcd
-	```
+```
+  $ gtkwave iiitb_rv32i.vcd
+```
  The gtkwave will be opened and the following window will appear.
  
  ![window](https://github.com/user-attachments/assets/03ae390f-cfe6-4812-8a62-7c1fdbc8b502)
