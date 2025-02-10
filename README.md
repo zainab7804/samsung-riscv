@@ -360,3 +360,12 @@ Example: jal x1, 2048
 </details>
 
 ----------------------------------------------------------------------------------------------------------------------------
+
+<details>
+<summary><b>TASK 4:</b> 
+  
+To perform a functional simulation of the given RISC-V Core Verilog netlist and testbench.</summary>
+
+We will use the Verilog Code and Testbench of RISCV that has already been designed. 
+
+
