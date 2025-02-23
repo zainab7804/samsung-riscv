@@ -528,11 +528,11 @@ This project successfully demonstrates the use of the VSDSquadron Mini board to 
 
 Further improvements can be done by:
 
-*Expanding to a 4-bit or 8-bit comparator.
+* Expanding to a 4-bit or 8-bit comparator.
 
-*Displaying outputs on an LCD screen instead of LEDs.
+* Displaying outputs on an LCD screen instead of LEDs.
 
-*Using button inputs instead of hardcoded values.
+* Using button inputs instead of hardcoded values.
 
 </details>
 
@@ -543,6 +543,29 @@ Further improvements can be done by:
   
 Project Implementation.</summary>
 
-Implementation Video
+**Implementation Video:**
 
 https://github.com/zainab7804/samsung-riscv/raw/refs/heads/main/TASK%206/Video.mp4 
+
+**Applications:**
+
+1. **Digital Circuits and Processors:**
+* Used in ALUs (Arithmetic Logic Units) as part of larger comparator circuits for decision-making.
+* Helps in implementing control units in microprocessors for conditional branching operations.
+* Forms the basis for larger bit comparators used in high-speed computing.
+2. **Embedded Systems:**
+* Used in sensor-based applications where small binary values need comparison (e.g., temperature thresholds, voltage levels).
+* Employed in digital controllers to compare signals and trigger actions in embedded devices.
+* Helps in low-power decision-making systems such as IoT devices.
+3. **Communication Systems:**
+* Used in error detection and correction circuits for comparing received and expected data bits.
+* Plays a role in modulation and demodulation techniques, where bit-wise comparisons are necessary.
+* Applied in signal processing systems for threshold detection.
+4. **Robotics and Automation:**
+* Used in robotic decision-making systems where conditions like distance measurement or object detection require comparison.
+* Applied in automated sorting systems, where binary values represent categories.
+* Helps in motion control applications, determining directional movements based on sensor inputs.
+5. **Security and Access Control:**
+* Used in digital lock systems, comparing entered codes against stored binary values.
+* Helps in biometric authentication systems where digital patterns are compared.
+* Applied in number-based security verifications in digital circuits.
