@@ -426,3 +426,44 @@ Use the following commands for installation:
 ![9](https://github.com/user-attachments/assets/36d38d5a-4c5c-4f9a-a233-1a79e395f8ea)
 
 </details>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+<details>
+<summary><b>TASK 5:</b> 
+  
+**Project:** 2 Bit Comparator using VSDSquadron mini board. </summary>
+
+**Overview:**
+This project focuses on developing and testing a 2-bit comparator using the VSDSquadron Mini board. A 2-bit comparator is a digital circuit that evaluates two 2-bit binary numbers and determines their relationship—whether one is greater than, less than, or equal to the other. The implementation includes writing the comparator logic in C using Visual Studio Code, assembling the circuit on a breadboard, and utilizing LEDs to display the comparison results. The project combines software and hardware integration to demonstrate the practical application of digital logic design.
+
+**Components Required:**
+1. ***VSDSquadron Mini Board:*** Serves as the main microcontroller for processing and implementing the comparator logic.
+2. ***Breadboard and Jumper Wires:*** Used for assembling and testing the circuit connections.
+3. ***LEDs:*** We require 3 LEDs which idicate the comparison results (greater than, less than, or equal).
+4. ***Resistors (220 Ω):*** Protect the LEDs by limiting current flow.
+
+**PIN Configurations:**
+![image](https://github.com/user-attachments/assets/dab4caaf-87d0-40e3-984b-70fea92d80db)
+
+
+
+**Circuit Diagram:**
+
+![image](https://github.com/user-attachments/assets/5da872f2-a974-4882-8f40-026aba063bc2)
+
+
+
+
+**Truth Table:**
+
+![image](https://github.com/user-attachments/assets/88fde976-602c-4380-9d73-5964e8b5b853)
+
+
+**C Code:**
+
+```
+
+
+```
